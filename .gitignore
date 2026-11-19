@@ -1,0 +1,6 @@
+# generados por herdr-app / estado local
+*.d.ts
+**/runtime.json
+*.sock
+*.log
+.DS_Store

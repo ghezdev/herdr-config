@@ -106,7 +106,7 @@
               "id": "extras-toolbar",
               "type": "block",
               "size": {
-                "px": 380
+                "px": 290
               },
               "content": {
                 "mod": "toolbar-extras"
@@ -171,7 +171,12 @@
                       "id": "changes",
                       "type": "block",
                       "content": {
-                        "mod": "changes"
+                        "mod": "gitview",
+                        "props": {
+                          "replaces": {
+                            "mod": "changes"
+                          }
+                        }
                       }
                     }
                   ],

@@ -1,0 +1,4 @@
+open_mode = "workspace"
+picker_placement = "popup"
+slugify_new_branches = true
+show_remote_branches = false

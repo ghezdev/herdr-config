@@ -4,6 +4,14 @@
       "size": {
         "px": 982.0
       }
+    },
+    "panel-body": {
+      "active": "changes"
+    },
+    "sidebar": {
+      "size": {
+        "px": 358.0
+      }
     }
   },
   "file": {
@@ -117,7 +125,7 @@
                   "mod": "toolbar-extras"
                 },
                 "size": {
-                  "px": 380.0
+                  "px": 290.0
                 }
               }
             ],
@@ -179,7 +187,12 @@
                         "id": "changes",
                         "type": "block",
                         "content": {
-                          "mod": "changes"
+                          "mod": "gitview",
+                          "props": {
+                            "replaces": {
+                              "mod": "changes"
+                            }
+                          }
                         }
                       }
                     ],

@@ -1,0 +1,4 @@
+default_scope = "branch"
+toggle_placement = "tab"
+auto_open = false
+markdown_view = "rendered"

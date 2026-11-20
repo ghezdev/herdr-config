@@ -35,6 +35,22 @@ else
   echo "!! herdr no está instalado: instalalo (https://herdr.dev) y volvé a correr este script"
 fi
 
+echo "==> opencode: plugin que reporta su estado a herdr-app (Agents)"
+OC_PLUGINS="${XDG_CONFIG_HOME:-$HOME/.config}/opencode/plugins"
+mkdir -p "$OC_PLUGINS"
+cp "$REPO/opencode/plugins/hc-agent-status.js" "$OC_PLUGINS/"
+
+echo "==> gitview (panel de Changes, menú Git ▾)"
+# Su instalador baja el binario de la release (verificado con SHA-256), copia
+# los mods gitview* y agrega sus atajos. Necesita herdr-app abierto.
+if command -v herdr-app >/dev/null 2>&1 && herdr-app status >/dev/null 2>&1; then
+  curl -fsSL https://raw.githubusercontent.com/ChmaraX/herdr-gitview/main/install.sh | sh -s -- --app ||
+    echo "   (falló gitview; reintentá con herdr-app abierto)"
+else
+  echo "   herdr-app no está abierto: abrilo y corré"
+  echo "   curl -fsSL https://raw.githubusercontent.com/ChmaraX/herdr-gitview/main/install.sh | sh -s -- --app"
+fi
+
 echo "==> shell"
 LINE="[ -f \"$REPO/shell/herdr.sh\" ] && . \"$REPO/shell/herdr.sh\""
 for rc in "$HOME/.bashrc" "$HOME/.zshrc"; do
